@@ -1,0 +1,175 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Monument Extended", sans-serif;
+  overflow: hidden;
+}
+
+/* nav  */
+
+nav {
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.menu-item {
+  flex: 1;
+}
+
+.menu-left {
+  text-align: left;
+}
+
+.menu-center {
+  text-align: center;
+}
+
+.menu-right {
+  text-align: right;
+}
+
+.menu-link {
+  padding: 0 30px;
+}
+
+/* hero img  */
+
+.wrapper-img {
+  overflow: hidden;
+  position: relative;
+  top: 50% !important;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 30%;
+  height: 90vh;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box {
+  background: white;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* header  */
+
+.header {
+  position: absolute;
+  top: 60%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+}
+
+.header h1 {
+  font-size: 90px;
+  text-transform: uppercase;
+  margin: 0;
+  mix-blend-mode: overlay;
+}
+
+.header-1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.header-2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+/* hero-container */
+
+.sidebar-text {
+  position: absolute;
+  top: 20%;
+  right: 7%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(165, 165, 165);
+}
+
+.projects {
+  position: absolute;
+  bottom: 10%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.img-nav {
+  position: absolute;
+  right: 13%;
+  bottom: 13%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: grey;
+}
+
+.next {
+  position: relative;
+  top: 40px;
+  left: 80px;
+}
+
+/* loader  */
+
+.wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 2;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8%;
+  height: 20vh;
+  background: #fff;
+  z-index: 2;
+}
+
+/* media queries  */
+
+@media (max-width: 900px) {
+  .wrapper-img {
+    width: 90%;
+  }
+  .header {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 40px;
+  }
+
+  .projects,
+  .img-nav {
+    display: none;
+  }
+}

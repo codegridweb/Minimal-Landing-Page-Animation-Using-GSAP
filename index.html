@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Reveal Animation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+</head>
+<body>
+    <!-- loader  -->
+    <div class="wrapper">
+        <div class="loader"></div>
+    </div>
+    <div class="container">
+        <!-- nav  -->
+        <nav class="menu">
+            <div class="menu-left menu-item">
+                    <span class="menu-link">about</span>
+                    <span class="menu-link">contact</span>
+            </div>
+            <div class="menu-center menu-item">
+                <div class="brand-logo">mouthwash</div>
+            </div>
+            <div class="menu-right menu-item">
+                <div class="search-icon"><ion-icon name="search-sharp"></ion-icon>
+                </div>
+            </div>
+        </nav>
+
+        <!-- hero image  -->
+        <div class="wrapper-img">
+            <div class="box"></div>
+            <div>
+              <img class="image" src="hero-img.jpg">
+            </div>
+          </div>
+
+        <!-- header  -->
+        <div class="header">
+            <h1 class="header-1">Paulson</h1>
+            <h1 class="header-2">Jonas</h1>
+        </div>
+
+        <!-- hero-container  -->
+       <div class="hero-container">
+            <div class="sidebar-text">003</div>
+            <div class="projects">projects</div>
+            <div class="img-nav">
+                <div class="prev">prev</div>
+                <div class="next">next</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+    var textWrapper = document.querySelector('.header-1');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+    .add({
+        targets: '.header-1 .letter',
+        translateY: [200,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        delay: (el, i) => 4800 + 50 * i
+    });
+
+    var textWrapper = document.querySelector('.header-2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline()
+    .add({
+        targets: '.header-2 .letter',
+        translateY: [200,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        delay: (el, i) => 4800 + 50 * i
+    });
+
+    TweenMax.to(".wrapper", 2, {
+        top: "-100%",
+        ease: Expo.easeInOut,
+        delay: 3.6
+    });
+
+    var tl = new TimelineMax();
+
+    tl.from(".loader", 1.6, {
+        scaleY: "0%",
+        y: 80,
+        ease: Expo.easeInOut,
+        delay: 1,
+        transformOrigin:"50% 100%"
+    });
+
+    tl.to(".loader", 1.6, {
+        height: "20vh",
+        scaleY: "0%",
+        ease: Expo.easeInOut,
+        transformOrigin:"0% -100%"
+    });
+
+    TweenMax.to(".box", 2.4, {
+    y: "-100%",
+    ease: Expo.easeInOut,
+    delay: 3.8,
+    });
+
+    var tl = new TweenMax.staggerFrom(".menu > div", 2, {
+        opacity: 0,     
+        y: 30,
+        ease: Expo.easeInOut,
+        delay: 4.2
+    }, 0.1);
+
+    var tl = new TweenMax.staggerFrom(".hero-container > div", 2, {
+        opacity: 0,     
+        y: 30,
+        ease: Expo.easeInOut,
+        delay: 4.2
+    }, 0.1);
+    </script>
+</body>
+</html>
